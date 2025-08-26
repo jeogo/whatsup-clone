@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WhatsApp Web Clone
 
-## Getting Started
+A high-performance WhatsApp Web replica built with Next.js 14, TypeScript, and CSS Modules. This project demonstrates modern React patterns, responsive design, and performance optimization techniques.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Authentic WhatsApp Web Experience**: Pixel-perfect recreation of WhatsApp's interface
+- **Fully Responsive**: Optimized for mobile, tablet, and desktop devices
+- **Real-time Messaging Simulation**: Interactive chat with typing indicators and message status
+- **QR Code Authentication**: Realistic login flow with auto-redirect
+- **Modern Tech Stack**: Next.js 14 App Router, TypeScript strict mode, CSS Modules
+- **Performance Optimized**: Fast loading, smooth animations, efficient rendering
+- **iframe Compatible**: Works perfectly when embedded in other applications
+
+## 🛠 Technology Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript (strict mode enabled)
+- **Styling**: CSS Modules + PostCSS with nesting
+- **State Management**: React Context API and custom hooks
+- **QR Generation**: qrcode library
+- **Image Optimization**: Next.js Image component
+- **Performance**: Dynamic imports, code splitting, memoization
+
+## 📁 Project Structure
+
+```
+whatsapp-clone/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx          # QR code landing page
+│   │   ├── chat/page.tsx     # Main chat interface
+│   │   └── layout.tsx        # Root layout
+│   ├── components/
+│   │   ├── QRCodeDisplay/    # QR code authentication
+│   │   ├── ChatSidebar/      # Contacts list and search
+│   │   ├── ChatWindow/       # Main chat area
+│   │   └── MessageBubble/    # Individual message component
+│   ├── data/
+│   │   └── mockData.ts       # Realistic dummy data
+│   └── styles/
+│       └── globals.css       # CSS variables and base styles
+├── public/
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚦 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ 
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Start development server**:
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Open your browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Deploy on Vercel
+### Build for Production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📱 Usage
+
+1. **QR Code Page** (`/`): Shows WhatsApp-style QR code with auto-redirect to chat
+2. **Chat Interface** (`/chat`): Full messaging experience with realistic dummy data
+3. **Responsive Design**: Works seamlessly across all device sizes
+
+## 🎯 Key Features
+
+- Interactive messaging with typing indicators
+- Contact search and filtering
+- Message status indicators (sent, delivered, read)
+- Online/offline status for contacts
+- Mobile-first responsive design
+- Performance optimized with memoization and code splitting
+
+## 🔧 Built With
+
+- Next.js 14 App Router
+- TypeScript (strict mode)
+- CSS Modules + PostCSS
+- QRCode.js for QR generation
+- Modern React patterns (hooks, context, suspense)
+
+---
+
+**Ready to run in under 45 minutes! 🚀**

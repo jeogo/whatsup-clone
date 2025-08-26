@@ -1,0 +1,235 @@
+.sidebar {
+  width: 100%;
+  height: 100%;
+  background-color: var(--panel-background);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  padding: 16px;
+  background-color: var(--panel-background);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--whatsapp-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease;
+}
+
+.iconButton:hover {
+  background-color: var(--hover-background);
+}
+
+.searchContainer {
+  padding: 8px 16px 16px;
+  background-color: var(--panel-background);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 16px 8px 48px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--hover-background);
+  font-size: 14px;
+  position: relative;
+}
+
+.searchInput:focus {
+  outline: 2px solid var(--whatsapp-green);
+  outline-offset: -1px;
+}
+
+.searchInputWrapper {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.contactsList {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--panel-background);
+}
+
+.contactItem {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.contactItem:hover {
+  background-color: var(--hover-background);
+}
+
+.contactItem.active {
+  background-color: var(--hover-background);
+}
+
+.contactAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: var(--whatsapp-green);
+}
+
+.contactInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.contactName {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lastMessage {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contactMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.unreadBadge {
+  background-color: var(--whatsapp-green);
+  color: white;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+.onlineIndicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--whatsapp-green);
+  position: absolute;
+  bottom: 16px;
+  left: 52px;
+  border: 2px solid var(--panel-background);
+}
+
+.noResults {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.noResultsIcon {
+  margin-bottom: 16px;
+  opacity: 0.5;
+  color: var(--text-secondary);
+}
+
+.noResultsText {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.noResultsSubtext {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    border-right: none;
+  }
+  
+  .contactItem {
+    padding: 12px 16px;
+  }
+  
+  .contactAvatar {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .contactName {
+    font-size: 15px;
+  }
+  
+  .lastMessage {
+    font-size: 12px;
+  }
+}
