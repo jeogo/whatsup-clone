@@ -1,14 +1,21 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "WhatsApp Web",
   description: "Send and receive messages without keeping your phone online",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   other: {
     "X-Frame-Options": "SAMEORIGIN",
     "Content-Security-Policy": "frame-ancestors 'self'",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#25D366",
 };
 
 export default function RootLayout({

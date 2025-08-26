@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import QRCode from 'qrcode';
 import styles from './QRCodeDisplay.module.css';
 
@@ -96,12 +97,13 @@ export default function QRCodeDisplay({ showSkipButton = true }: QRCodeDisplayPr
             <p className={styles.loadingText}>Generating QR Code...</p>
           </div>
         ) : qrCodeDataUrl ? (
-          <img
+          <Image
             src={qrCodeDataUrl}
             alt="WhatsApp Web QR Code"
             className={styles.qrCode}
             width={256}
             height={256}
+            unoptimized
           />
         ) : (
           <div className={styles.loadingQR}>
@@ -122,7 +124,7 @@ export default function QRCodeDisplay({ showSkipButton = true }: QRCodeDisplayPr
         {showSkipButton && isLoaded && (
           <div className={styles.skipSection}>
             <p className={styles.skipText}>
-              Don't have WhatsApp on your phone? Try our demo version.
+              Don&apos;t have WhatsApp on your phone? Try our demo version.
             </p>
             <button 
               onClick={handleSkipToChat}

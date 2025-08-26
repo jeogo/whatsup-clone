@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import ChatSidebar from '@/components/ChatSidebar';
 import ChatWindow from '@/components/ChatWindow';
 import { contacts } from '@/data/mockData';
 import styles from './page.module.css';
 
-export default function ChatPage() {
+function ChatPageContent() {
   const [selectedContactId, setSelectedContactId] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const searchParams = useSearchParams();
@@ -109,5 +109,17 @@ export default function ChatPage() {
         />
       </div>
     </div>
+  );
+}
+
+export default function ChatPage() {
+  return (
+    <Suspense fallback={
+      <div className={styles.loading}>
+        Loading WhatsApp Web...
+      </div>
+    }>
+      <ChatPageContent />
+    </Suspense>
   );
 }

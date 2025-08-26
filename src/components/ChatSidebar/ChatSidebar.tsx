@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { Contact, contacts } from '@/data/mockData';
+import { contacts } from '@/data/mockData';
 import styles from './ChatSidebar.module.css';
 
 interface ChatSidebarProps {
