@@ -25,10 +25,13 @@ function ChatPageContent() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Initialize with first contact on desktop, empty on mobile
+  // Optional: restore last selected contact if user previously chose one (desktop only)
   useEffect(() => {
-    if (!isMobile && !selectedContactId && contacts.length > 0) {
-      setSelectedContactId(contacts[0]?.id || null);
+    if (!isMobile && !selectedContactId) {
+      const last = typeof window !== 'undefined' ? sessionStorage.getItem('wa_last_contact') : null;
+      if (last && contacts.some(c => c.id === last)) {
+        setSelectedContactId(last);
+      }
     }
   }, [isMobile, selectedContactId]);
 
@@ -65,6 +68,9 @@ function ChatPageContent() {
 
   const handleContactSelect = useCallback((contactId: string) => {
     setSelectedContactId(contactId);
+    try {
+      sessionStorage.setItem('wa_last_contact', contactId);
+    } catch {}
   }, []);
 
   const handleBackToSidebar = useCallback(() => {
