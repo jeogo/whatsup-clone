@@ -82,10 +82,36 @@
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
 }
 
 .qrCode:hover {
   transform: scale(1.02);
+}
+
+.loadingQR {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 256px;
+  width: 256px;
+  margin: 0 auto 1.5rem;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--whatsapp-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loadingText {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 .instructions {
@@ -193,6 +219,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes pulse {

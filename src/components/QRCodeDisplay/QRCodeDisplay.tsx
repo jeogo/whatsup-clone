@@ -122,13 +122,16 @@ export default function QRCodeDisplay({ showSkipButton = true }: QRCodeDisplayPr
         {showSkipButton && isLoaded && (
           <div className={styles.skipSection}>
             <p className={styles.skipText}>
-              Don't want to scan? You can try the demo instead.
+              Don't have WhatsApp on your phone? Try our demo version.
             </p>
             <button 
               onClick={handleSkipToChat}
               className={styles.skipButton}
             >
-              Skip to Demo Chat
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2M20,16H5.17L4,17.17V4H20V16Z"/>
+              </svg>
+              Try Demo Chat
             </button>
           </div>
         )}
